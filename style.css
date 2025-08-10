@@ -6,6 +6,33 @@ body {
   background-color: #f7fafc;
 }
 
+/* Fallback for Tailwind's hidden */
+.hidden { display: none !important; }
+
+/* Ensure overlays render even if Tailwind is unavailable */
+#start-screen,
+#game-over-screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  background: rgba(0,0,0,0.5);
+}
+
+/* Ensure score is visible */
+#score {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  color: #fff;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px #000;
+}
+
 #game-container {
   position: relative;
   width: 100%;
@@ -32,6 +59,10 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   z-index: 2;
+  /* Fallback if image missing */
+  background-color: #ff69b4;
+  border: 2px solid #000;
+  border-radius: 8px;
 }
 
 .obstacle {
@@ -41,6 +72,10 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   z-index: 2;
+  /* Fallback visual if image missing */
+  background-color: #222;
+  border: 2px solid #000;
+  border-radius: 6px;
 }
 
 .ground {
