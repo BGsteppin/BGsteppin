@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Runner Game - Lipz Edition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-4">
+  <div class="text-center mb-4 bg-white/50 p-4 rounded-lg">
+    <h1 class="text-4xl font-bold">Lipz's Great Escape</h1>
+    <p class="text-gray-800">Press Space or Tap to Jump</p>
+  </div>
+
+  <div id="game-container">
+    <div id="player"></div>
+    <div class="ground"></div>
+    <div id="score" class="absolute top-4 right-4 text-2xl text-white font-bold">0</div>
+    <div id="start-screen" class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center text-white">
+      <h2 class="text-3xl mb-4">Ready?</h2>
+      <p>Press any key or tap to start</p>
+    </div>
+    <div id="game-over-screen" class="absolute inset-0 bg-black/50 flex-col items-center justify-center text-center hidden text-white">
+      <h2 class="text-4xl text-red-500 mb-2">Game Over</h2>
+      <p id="final-score" class="text-xl mb-4"></p>
+      <button id="restart-button" class="px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors">Restart</button>
+    </div>
+  </div>
+
+  <script src="game.js" defer></script>
+</body>
+</html>
